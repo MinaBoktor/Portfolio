@@ -1,25 +1,57 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
+  useEffect(() => {
+    // Add structured data for better SEO
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.innerHTML = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Portfolio - Full Stack Developer",
+      "url": "https://yourportfolio.com",
+      "description": "Professional portfolio showcasing full stack development skills and projects",
+      "author": {
+        "@type": "Person",
+        "name": "Portfolio Developer",
+        "jobTitle": "Full Stack Developer"
+      },
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Portfolio Developer",
+        "jobTitle": "Full Stack Developer",
+        "knowsAbout": ["JavaScript", "React", "Node.js", "TypeScript", "Full Stack Development"]
+      }
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main role="main">
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
 
 export default App;
+
