@@ -104,13 +104,6 @@ const Hero = () => {
     <section 
       ref={heroRef}
       className="min-h-screen relative overflow-hidden pt-20"
-      style={{
-        background: `
-          radial-gradient(circle at 25% 75%, rgba(59, 130, 246, 0.12) 0%, transparent 45%),
-          radial-gradient(circle at 75% 25%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
-          linear-gradient(135deg, #0f172a 0%, #1e293b 100%)
-        `
-      }}
     >
       {/* Optimized Grid Pattern - CSS only */}
       <div 
