@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Education from './components/Education';
 import Projects from './components/Projects';
-import Skills from './components/Skills';
+import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Career from './components/Career';
@@ -47,8 +47,9 @@ function App() {
         <Education />
         <Projects />
         <Career />
-        <Skills />
+        <Services />
         <Contact />
+
       </main>
       <Footer />
     </div>

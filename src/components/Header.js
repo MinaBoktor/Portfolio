@@ -15,16 +15,26 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (sectionId === 'hero') {
+      // Scroll to top for home/hero section
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMobileMenuOpen(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
+  };
+
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
+    { id: 'hero', label: 'Home' },
+    { id: 'education', label: 'About' },
     { id: 'services', label: 'Services' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' }
@@ -39,13 +49,15 @@ const Header = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-16 lg:h-20">
           
-          {/* Logo/Brand */}
+          {/* Logo/Brand - Now clickable */}
           <div className="flex items-center">
-            <img 
-              src={signature} 
-              alt="Logo" 
-              className="h-12 lg:h-14 mt-2 filter brightness-0 invert opacity-90 hover:opacity-100 transition-opacity duration-200" 
-            />
+            <button onClick={scrollToTop} className="focus:outline-none">
+              <img 
+                src={signature} 
+                alt="Logo" 
+                className="h-12 lg:h-14 mt-2 filter brightness-0 invert opacity-90 hover:opacity-100 transition-opacity duration-200 cursor-pointer" 
+              />
+            </button>
           </div>
 
           {/* Desktop Navigation */}
