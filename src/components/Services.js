@@ -208,6 +208,8 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
+              id={`service-${service.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+              data-service-title={service.title}
               className={`bg-slate-800/60 backdrop-blur-sm rounded-2xl border border-slate-700 p-8 transition-all duration-500 cursor-pointer group relative overflow-hidden
                 ${hoveredService === index 
                   ? `scale-105 shadow-2xl ${service.hoverShadow} border-slate-600 bg-slate-800/80` 
