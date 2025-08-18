@@ -235,7 +235,7 @@ const Hero = () => {
               {/* Primary CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="/resume.pdf"
+                  href={`${process.env.PUBLIC_URL}/resume.pdf`}
                   download="Mina-Boktor-Resume.pdf"
                 >
                   <button 
