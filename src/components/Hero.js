@@ -349,19 +349,6 @@ const Hero = () => {
                   <div className="text-xs text-slate-400 font-light uppercase tracking-wide group-hover/stat:text-slate-300 transition-colors duration-300">Success</div>
                 </div>
               </div>
-
-              <div 
-                className="absolute bottom-16 -right-6 bg-slate-800/90 backdrop-blur-sm rounded-xl p-4 border border-slate-700 shadow-xl hover:bg-slate-700/90 hover:border-slate-600 hover:shadow-2xl hover:shadow-cyan-500/20 hover:scale-110 transition-all duration-300 cursor-default group/stat"
-                style={{
-                  willChange: 'transform',
-                  transform: `translate3d(${-mousePos.x * 0.05}px, ${-mousePos.y * 0.05}px, 0)`
-                }}
-              >
-                <div className="text-center min-w-16">
-                  <div className="text-2xl font-bold text-cyan-400 group-hover/stat:text-cyan-300 transition-colors duration-300">4</div>
-                  <div className="text-xs text-slate-400 font-light uppercase tracking-wide group-hover/stat:text-slate-300 transition-colors duration-300">Clients</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -16,36 +16,43 @@ const Projects = () => {
 
   // Intersection Observer for scroll animations
   useEffect(() => {
-    observerRef.current = new IntersectionObserver(
+    // Create the observer with a callback that updates state
+    const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const projectId = entry.target.getAttribute('data-project-id');
-            if (projectId && !visibleProjects.includes(projectId)) {
-              setVisibleProjects(prev => [...prev, projectId]);
-            }
+            // Use the functional update form to avoid needing visibleProjects in dependencies
+            setVisibleProjects(prev => {
+              if (projectId && !prev.includes(projectId)) {
+                return [...prev, projectId];
+              }
+              return prev;
+            });
+            // Once the element is visible, we can stop observing it for performance
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1, rootMargin: '50px' }
     );
 
-    // Fallback for GitHub Pages - make projects visible after delay if observer fails
-    const fallbackTimer = setTimeout(() => {
-      const allProjectElements = document.querySelectorAll('[data-project-id]');
-      const allProjectIds = Array.from(allProjectElements).map(el => el.getAttribute('data-project-id'));
-      const missingProjects = allProjectIds.filter(id => id && !visibleProjects.includes(id));
-      
-      if (missingProjects.length > 0) {
-        setVisibleProjects(prev => [...prev, ...missingProjects]);
-      }
-    }, 1500);
+    // Find all project elements and start observing them
+    const projectElements = document.querySelectorAll('[data-project-id]');
+    projectElements.forEach(el => observer.observe(el));
 
+    // A simple fallback in case the observer doesn't fire for some reason
+    const fallbackTimer = setTimeout(() => {
+      const allProjectIds = Array.from(projectElements).map(el => el.getAttribute('data-project-id'));
+      setVisibleProjects(allProjectIds); // Make all visible after 2 seconds
+    }, 2000);
+
+    // Cleanup function: disconnect the observer and clear the timer when the component unmounts
     return () => {
+      observer.disconnect();
       clearTimeout(fallbackTimer);
-      observerRef.current?.disconnect();
     };
-  }, [visibleProjects]);
+  }, []);
 
   // Project categories for filtering
   const categories = [
@@ -256,11 +263,6 @@ const Projects = () => {
                 <div
                   key={project.id}
                   data-project-id={project.id}
-                  ref={(el) => {
-                    if (el && observerRef.current) {
-                      observerRef.current.observe(el);
-                    }
-                  }}
                   className={`group relative bg-slate-800/60 backdrop-blur-sm rounded-2xl border border-slate-700 overflow-hidden hover:bg-slate-700/60 hover:border-slate-600 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 ${
                     visibleProjects.includes(project.id) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
@@ -389,11 +391,6 @@ const Projects = () => {
               <div
                 key={project.id}
                 data-project-id={project.id}
-                ref={(el) => {
-                  if (el && observerRef.current) {
-                    observerRef.current.observe(el);
-                  }
-                }}
                 className={`group relative bg-slate-800/60 backdrop-blur-sm rounded-2xl border border-slate-700 overflow-hidden hover:bg-slate-700/60 hover:border-slate-600 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 ${
                   visibleProjects.includes(project.id) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
