@@ -30,7 +30,21 @@ const Projects = () => {
       { threshold: 0.1, rootMargin: '50px' }
     );
 
-    return () => observerRef.current?.disconnect();
+    // Fallback for GitHub Pages - make projects visible after delay if observer fails
+    const fallbackTimer = setTimeout(() => {
+      const allProjectElements = document.querySelectorAll('[data-project-id]');
+      const allProjectIds = Array.from(allProjectElements).map(el => el.getAttribute('data-project-id'));
+      const missingProjects = allProjectIds.filter(id => id && !visibleProjects.includes(id));
+      
+      if (missingProjects.length > 0) {
+        setVisibleProjects(prev => [...prev, ...missingProjects]);
+      }
+    }, 1500);
+
+    return () => {
+      clearTimeout(fallbackTimer);
+      observerRef.current?.disconnect();
+    };
   }, [visibleProjects]);
 
   // Project categories for filtering
