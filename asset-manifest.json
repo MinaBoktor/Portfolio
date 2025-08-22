@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.8db2ff34.css",
-    "main.js": "/Portfolio/static/js/main.228dfd8e.js",
-    "static/js/453.453aae8c.chunk.js": "/Portfolio/static/js/453.453aae8c.chunk.js",
-    "static/media/apexequity.png": "/Portfolio/static/media/apexequity.47e8bcca1feb53d5fe66.png",
-    "static/media/cognara.png": "/Portfolio/static/media/cognara.5d6765f36163fdb0ad7b.png",
-    "static/media/cs50.png": "/Portfolio/static/media/cs50.6d2893a4f8ce66579daa.png",
-    "static/media/mina.jpg": "/Portfolio/static/media/mina.36b9cb00d6749a717ace.jpg",
-    "static/media/asu.png": "/Portfolio/static/media/asu.805d6b4e459147c55ec3.png",
-    "static/media/harvard.png": "/Portfolio/static/media/harvard.65c8b9c25d1b1528cdc8.png",
-    "static/media/career180.png": "/Portfolio/static/media/career180.d3a8dffd97cfeb22e8a6.png",
-    "static/media/lemon.png": "/Portfolio/static/media/lemon.afdeaacdc896e7746f7a.png",
-    "static/media/rsa.jpg": "/Portfolio/static/media/rsa.d857de3744f25aa464f1.jpg",
-    "static/media/uel.png": "/Portfolio/static/media/uel.5d24cb73e7504008aff0.png",
-    "static/media/lumora.png": "/Portfolio/static/media/lumora.9268535dd12a0a7a2034.png",
-    "static/media/react.png": "/Portfolio/static/media/react.6cae6014cd30111eb393.png",
-    "static/media/offline.png": "/Portfolio/static/media/offline.b6c5d1f1a916fa92b9ed.png",
-    "static/media/meta.png": "/Portfolio/static/media/meta.089a0f441712407fce67.png",
-    "index.html": "/Portfolio/index.html",
-    "main.8db2ff34.css.map": "/Portfolio/static/css/main.8db2ff34.css.map",
-    "main.228dfd8e.js.map": "/Portfolio/static/js/main.228dfd8e.js.map",
-    "453.453aae8c.chunk.js.map": "/Portfolio/static/js/453.453aae8c.chunk.js.map"
+    "main.css": "/static/css/main.8db2ff34.css",
+    "main.js": "/static/js/main.99e529f2.js",
+    "static/js/453.453aae8c.chunk.js": "/static/js/453.453aae8c.chunk.js",
+    "static/media/apexequity.png": "/static/media/apexequity.47e8bcca1feb53d5fe66.png",
+    "static/media/cognara.png": "/static/media/cognara.5d6765f36163fdb0ad7b.png",
+    "static/media/cs50.png": "/static/media/cs50.6d2893a4f8ce66579daa.png",
+    "static/media/mina.jpg": "/static/media/mina.36b9cb00d6749a717ace.jpg",
+    "static/media/asu.png": "/static/media/asu.805d6b4e459147c55ec3.png",
+    "static/media/harvard.png": "/static/media/harvard.65c8b9c25d1b1528cdc8.png",
+    "static/media/career180.png": "/static/media/career180.d3a8dffd97cfeb22e8a6.png",
+    "static/media/lemon.png": "/static/media/lemon.afdeaacdc896e7746f7a.png",
+    "static/media/rsa.jpg": "/static/media/rsa.d857de3744f25aa464f1.jpg",
+    "static/media/uel.png": "/static/media/uel.5d24cb73e7504008aff0.png",
+    "static/media/lumora.png": "/static/media/lumora.9268535dd12a0a7a2034.png",
+    "static/media/react.png": "/static/media/react.6cae6014cd30111eb393.png",
+    "static/media/offline.png": "/static/media/offline.b6c5d1f1a916fa92b9ed.png",
+    "static/media/meta.png": "/static/media/meta.089a0f441712407fce67.png",
+    "index.html": "/index.html",
+    "main.8db2ff34.css.map": "/static/css/main.8db2ff34.css.map",
+    "main.99e529f2.js.map": "/static/js/main.99e529f2.js.map",
+    "453.453aae8c.chunk.js.map": "/static/js/453.453aae8c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8db2ff34.css",
-    "static/js/main.228dfd8e.js"
+    "static/js/main.99e529f2.js"
   ]
 }
