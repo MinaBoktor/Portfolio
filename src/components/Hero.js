@@ -180,8 +180,8 @@ const Hero = () => {
         {/* Main Hero Content */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full max-w-6xl mx-auto mb-16">
           
-          {/* Left Content - Immediate render */}
-          <div className={`space-y-8 lg:space-y-10 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          {/* Left Content - Now has delay on mobile */}
+          <div className={`space-y-8 lg:space-y-10 order-2 lg:order-1 transition-opacity duration-700 ${isVisible ? 'opacity-100 delay-200 lg:delay-0' : 'opacity-0'}`}>
             
             {/* Status Indicator - Enhanced hover */}
             <div className="flex items-center gap-3 group cursor-default">
@@ -286,8 +286,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Optimized */}
-          <div className={`relative transition-opacity duration-700 delay-200 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          {/* Right Content - Now has no delay, order-1 on mobile */}
+          <div className={`relative order-1 lg:order-2 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 mx-auto group">
               
@@ -310,45 +310,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Floating Stats - Enhanced hover effects */}
-              <div 
-                className="absolute -top-4 -right-6 bg-slate-800/90 backdrop-blur-sm rounded-xl p-4 border border-slate-700 shadow-xl hover:bg-slate-700/90 hover:border-slate-600 hover:shadow-2xl hover:shadow-emerald-500/20 hover:scale-110 transition-all duration-300 cursor-default group/stat"
-                style={{
-                  willChange: 'transform',
-                  transform: `translate3d(${mousePos.x * 0.04}px, ${mousePos.y * 0.04}px, 0)`
-                }}
-              >
-                <div className="text-center min-w-16">
-                  <div className="text-2xl font-bold text-emerald-400 group-hover/stat:text-emerald-300 transition-colors duration-300">3+</div>
-                  <div className="text-xs text-slate-400 font-light uppercase tracking-wide group-hover/stat:text-slate-300 transition-colors duration-300">Years</div>
-                </div>
-              </div>
 
-              <div 
-                className="absolute top-20 -left-6 bg-slate-800/90 backdrop-blur-sm rounded-xl p-4 border border-slate-700 shadow-xl hover:bg-slate-700/90 hover:border-slate-600 hover:shadow-2xl hover:shadow-blue-500/20 hover:scale-110 transition-all duration-300 cursor-default group/stat"
-                style={{
-                  willChange: 'transform',
-                  transform: `translate3d(${-mousePos.x * 0.03}px, ${mousePos.y * 0.03}px, 0)`
-                }}
-              >
-                <div className="text-center min-w-16">
-                  <div className="text-2xl font-bold text-blue-400 group-hover/stat:text-blue-300 transition-colors duration-300">15+</div>
-                  <div className="text-xs text-slate-400 font-light uppercase tracking-wide group-hover/stat:text-slate-300 transition-colors duration-300">Projects</div>
-                </div>
-              </div>
-
-              <div 
-                className="absolute -bottom-4 left-8 bg-slate-800/90 backdrop-blur-sm rounded-xl p-4 border border-slate-700 shadow-xl hover:bg-slate-700/90 hover:border-slate-600 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-110 transition-all duration-300 cursor-default group/stat"
-                style={{
-                  willChange: 'transform',
-                  transform: `translate3d(${mousePos.x * 0.035}px, ${-mousePos.y * 0.035}px, 0)`
-                }}
-              >
-                <div className="text-center min-w-16">
-                  <div className="text-2xl font-bold text-purple-400 group-hover/stat:text-purple-300 transition-colors duration-300">98%</div>
-                  <div className="text-xs text-slate-400 font-light uppercase tracking-wide group-hover/stat:text-slate-300 transition-colors duration-300">Success</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
