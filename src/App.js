@@ -8,6 +8,7 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Career from './components/Career';
+import Certificates from './components/Certificates';
 
 function App() {
   useEffect(() => {
@@ -47,6 +48,7 @@ function App() {
         <Education />
         <Projects />
         <Career />
+        <Certificates />
         <Services />
         <Contact />
 

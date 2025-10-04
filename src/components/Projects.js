@@ -109,7 +109,7 @@ const Projects = () => {
       description: 'An advanced AI-powered cognitive assistance platform built with JavaScript, featuring intelligent automation and user interaction capabilities.',
       longDescription: 'Cognara is a sophisticated AI platform designed to enhance cognitive processes through intelligent automation and seamless user interactions.',
       technologies: ['React.js', 'Django', 'Python', 'JavaScript', 'AI/ML', 'API Integration'],
-      githubUrl: 'https://github.com/MinaBoktor/Cognara',
+      liveUrl: 'https://cognara-blog.netlify.app/',
       featured: true,
       impact: {
         metric: 'AI-Powered',
